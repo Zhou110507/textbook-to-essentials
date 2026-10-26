@@ -1,0 +1,348 @@
+{
+  "documents": [
+    {
+      "id": "T",
+      "role": "textbook",
+      "title": "工程热力学，第2版，2011",
+      "format": "pdf",
+      "page_count": 354
+    }
+  ],
+  "scope": {
+    "sections": [
+      "2-2",
+      "2-3",
+      "2-4",
+      "2-5",
+      "2-6"
+    ],
+    "exam_evidence": [],
+    "note": "节选示范，只覆盖列出的代表知识；不是完整章精要。"
+  },
+  "coverage": [
+    {
+      "section": "2-2",
+      "decision": "rewrite",
+      "reason": "合并储能组成与符号，省微观叙事",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            50,
+            51,
+            52
+          ],
+          "printed_pages": "30, 31, 32",
+          "section": "2-2"
+        }
+      ],
+      "output_ids": [
+        "F01"
+      ]
+    },
+    {
+      "section": "2-3",
+      "decision": "rewrite",
+      "reason": "保留闭口总式、条件与两条功量方法分叉",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "printed_pages": "32, 33",
+          "section": "2-3"
+        }
+      ],
+      "output_ids": [
+        "F02",
+        "C01",
+        "E01",
+        "E02"
+      ]
+    },
+    {
+      "section": "2-4",
+      "decision": "rewrite",
+      "reason": "缩短移动控制质量推导，保留固定控制容积总式与推进功边界",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            53,
+            54,
+            55,
+            56,
+            57
+          ],
+          "printed_pages": "33, 34, 35, 36, 37",
+          "section": "2-4"
+        }
+      ],
+      "output_ids": [
+        "F01",
+        "F03"
+      ]
+    },
+    {
+      "section": "2-5",
+      "decision": "rewrite",
+      "reason": "本示范只保留稳流能量分支，不宣称覆盖全部技术功与机械能关系",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            57,
+            58,
+            59,
+            60,
+            61
+          ],
+          "printed_pages": "37, 38, 39, 40, 41",
+          "section": "2-5"
+        }
+      ],
+      "output_ids": [
+        "F04"
+      ]
+    },
+    {
+      "section": "2-6",
+      "decision": "rewrite",
+      "reason": "条件表合并设备特例，动能与散热用原创例处理",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "printed_pages": "41, 42, 43, 44",
+          "section": "2-6"
+        }
+      ],
+      "output_ids": [
+        "M01",
+        "C02",
+        "E03"
+      ]
+    }
+  ],
+  "items": [
+    {
+      "id": "F01",
+      "kind": "formula",
+      "statement": "储能与比能的组成及焓的定义",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            52,
+            55
+          ],
+          "printed_pages": "32, 35",
+          "section": "2-2-3; 2-4-3"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "eq:energy",
+      "conditions": [
+        "采用宏观动能与重力位能模型，参考基准一致"
+      ],
+      "symbols": "E、U为J；e、u、h为J/kg；c为m/s；g为m/s²；z为m；p为Pa；v为m³/kg"
+    },
+    {
+      "id": "F02",
+      "kind": "formula",
+      "statement": "闭口能量平衡Q-W=ΔE及忽略动位能时的特例",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "printed_pages": "32, 33",
+          "section": "2-3"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "eq:closed",
+      "conditions": [
+        "闭口固定质量；热入功出为正；内能特例需忽略宏观动位能差"
+      ],
+      "symbols": "Q、W、E为J，Δ表示终态减初态"
+    },
+    {
+      "id": "F03",
+      "kind": "formula",
+      "statement": "开口控制容积的储能、换热、非推进功及物流携能收支",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            54,
+            55,
+            56
+          ],
+          "printed_pages": "34, 35, 36",
+          "section": "2-4-2"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "eq:open",
+      "conditions": [
+        "固定控制容积；端口用均匀流参数；各类非推进功计入W_net"
+      ],
+      "symbols": "Qdot、Wdot为W；mdot为kg/s；h、c²/2、gz统一为J/kg"
+    },
+    {
+      "id": "F04",
+      "kind": "formula",
+      "statement": "稳态单进单出的单位质量能量平衡",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            58,
+            59
+          ],
+          "printed_pages": "38, 39",
+          "section": "2-5-1; 2-5-2"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "eq:steady",
+      "conditions": [
+        "稳态、单进单出、进出流率相等；仅有轴功才令w_net=w_s"
+      ],
+      "symbols": "q=Qdot/mdot，w_net=Wdot_net/mdot，单位J/kg"
+    },
+    {
+      "id": "M01",
+      "kind": "method",
+      "statement": "从总式按题设删项，设备名称不足以决定特例",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            61,
+            62,
+            63,
+            64
+          ],
+          "printed_pages": "41, 42, 43, 44",
+          "section": "2-6"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第2节设备条件表"
+    },
+    {
+      "id": "C01",
+      "kind": "concept",
+      "statement": "刚性不排除电功轴功等总功",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            53,
+            55,
+            56
+          ],
+          "printed_pages": "33, 35, 36",
+          "section": "2-3; 2-4-2"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第3节刚性容器辨析"
+    },
+    {
+      "id": "C02",
+      "kind": "concept",
+      "statement": "节流前后等焓不自动等温",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            64
+          ],
+          "printed_pages": "44",
+          "section": "2-6-5"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第3节节流辨析"
+    },
+    {
+      "id": "E01",
+      "kind": "example",
+      "statement": "原创理想气体定比热气缸例，ΔU=72kJ、Q=92kJ",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "printed_pages": "32, 33",
+          "section": "2-3"
+        },
+        {
+          "document": "T",
+          "pdf_pages": [
+            73
+          ],
+          "printed_pages": "53",
+          "section": "3-3-1"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第4节例1",
+      "origin": "original"
+    },
+    {
+      "id": "E02",
+      "kind": "example",
+      "statement": "原创刚性绝热电功例，ΔU=12kJ",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            52,
+            53
+          ],
+          "printed_pages": "32, 33",
+          "section": "2-3"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第4节例2",
+      "origin": "original"
+    },
+    {
+      "id": "E03",
+      "kind": "example",
+      "statement": "原创稳流散热汽轮机，轴功776.4kJ/kg，1552.8kW",
+      "source_refs": [
+        {
+          "document": "T",
+          "pdf_pages": [
+            58,
+            62,
+            63
+          ],
+          "printed_pages": "38, 42, 43",
+          "section": "2-5-1; 2-6-2"
+        }
+      ],
+      "verification": "verified",
+      "output_anchor": "第4节例3",
+      "origin": "original"
+    }
+  ],
+  "unresolved": []
+}

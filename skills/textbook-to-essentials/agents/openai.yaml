@@ -1,0 +1,4 @@
+interface:
+  display_name: "理工科教材精要"
+  short_description: "从理工科教材中精确提炼核心概念、公式条件和题型，输出 LaTeX 与 PDF"
+  default_prompt: "请使用 $textbook-to-essentials 将提供的教材整理为准确精练的学习精要，参考配套材料的取舍方法，交付 LaTeX 和 PDF。"

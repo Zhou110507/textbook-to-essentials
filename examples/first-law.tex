@@ -1,0 +1,108 @@
+\documentclass[UTF8,a4paper,11pt,fontset=fandol]{ctexart}
+\usepackage[margin=2cm]{geometry}
+\usepackage{amsmath,amssymb,booktabs,tabularx,array}
+\usepackage[hidelinks]{hyperref}
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{0.4em}
+\title{热力学第一定律：节选示范}
+\author{}\date{}
+\begin{document}
+\pagestyle{plain}
+\maketitle\vspace{-2.8em}
+\textbf{范围：}演示总式、条件分支、概念辨析与原创算例的取舍；不是全章或全书精要。
+\textbf{依据：}《工程热力学》第2版第2章，主要为印刷页30--44（PDF 50--64）；
+编排参考《工程热力学精要与题解》第2章。没有使用考纲或真题，不标注考试频次。
+
+\section{对象与符号先于公式}
+取吸热 $Q>0$、系统对外做功 $W>0$。
+$E$ 为总储存能，$U$ 为内能，$c$ 为速度，$z$ 为高度：
+\begin{equation}\label{eq:energy}
+E=U+E_{\mathrm{k}}+E_{\mathrm{p}},\qquad
+e=u+\frac{c^2}{2}+gz,\qquad h=u+pv.
+\end{equation}
+$E,U$ 为总量，$e,u,h$ 为单位质量的能量量。上式采用 SI 单位：
+$e,u,h$ 为 $\mathrm{J/kg}$，绝对压力 $p$ 的单位为 $\mathrm{Pa}$，$v$ 为 $\mathrm{m^3/kg}$。
+焓是状态量；不能将焓直接解释为工质“含有的热量”。
+
+\section{总式与特例：条件决定删项}
+\textbf{闭口系统：}以固定质量为对象，能量平衡为
+\begin{equation}\label{eq:closed}
+ Q-W=\Delta E.
+\end{equation}
+若宏观动能、位能变化可忽略，才化为 $Q=\Delta U+W$。
+式\eqref{eq:closed}本身不要求过程可逆，也不要求工质为理想气体。
+只有在教材所定义的准静态容积变化功条件下，才可写
+$W_{\mathrm{b}}=\int_1^2 p\,\mathrm{d}V$。
+若还存在电功、轴功等，它们仍应计入总功。
+
+\textbf{开口控制容积：}质量携带焓、动能与位能穿过边界。
+取固定控制容积，各端口用均匀流参数表示；$\dot W_{\mathrm{net}}$ 为所有非推进功的对外净输出功率
+（存在轴功、电功等时一并计入）：
+\begin{align}\label{eq:open}
+\frac{\mathrm{d}E_{\mathrm{cv}}}{\mathrm{d}t}
+={}&\dot Q-\dot W_{\mathrm{net}}
++\sum_{\mathrm{in}}\dot m\left(h+\frac{c^2}{2}+gz\right)\notag\\
+&-\sum_{\mathrm{out}}\dot m\left(h+\frac{c^2}{2}+gz\right).
+\end{align}
+稳态、单进单出且质量流率相等时，令 $q=\dot Q/\dot m$、
+$w_{\mathrm{net}}=\dot W_{\mathrm{net}}/\dot m$，可得
+\begin{equation}\label{eq:steady}
+ q=\Delta h+\frac{c_2^2-c_1^2}{2}+g(z_2-z_1)+w_{\mathrm{net}}.
+\end{equation}
+焓中已包含推进功，使用上式时不能再重复计入 $pv$。
+仅有轴功时，$w_{\mathrm{net}}=w_{\mathrm{s}}$。
+充气、放气及设备启动等非稳态过程必须保留控制容积储能项。
+
+\begin{tabularx}{\linewidth}{@{}p{2.1cm}Xp{3.5cm}@{}}
+\toprule
+对象 & 在式\eqref{eq:steady}中采用的条件 & 简化结果 \\
+\midrule
+换热设备 & 无轴功、电功等非推进功，动能、位能变化可忽略 & $q=h_2-h_1$ \\
+汽轮机 & 绝热、仅有轴功，动能、位能变化可忽略 & $w_{\mathrm{s}}=h_1-h_2$ \\
+压缩机 & 同上，输入功另定义为正 & $w_{\mathrm{in}}=h_2-h_1$ \\
+节流装置 & 绝热、无非推进功，动能、位能变化可忽略 & $h_1=h_2$ \\
+\bottomrule
+\end{tabularx}
+
+\section{两处必须辨清的判断}
+\textbf{刚性容器不等于没有功。}
+容积不变只排除了容积变化功，电加热器或搅拌器仍可能传功。
+
+\textbf{节流等焓不等于等温。}
+温度变化取决于工质性质与初态；不能把理想气体的性质扩展到所有实际工质。
+
+\section{题型链与原创算例}
+统一路径是：选对象并画边界，判定稳态与工质模型，列含全部能量项的总式，
+用题设逐项删减，再求解并检查符号、量纲、极限及守恒。
+
+\textbf{例1：闭口气缸。}
+理想气体质量 $m=2\,\mathrm{kg}$，定比热容模型 $c_v=0.72\,\mathrm{kJ/(kg\cdot K)}$，
+温度从 $300\,\mathrm{K}$ 升至 $350\,\mathrm{K}$，对外总功 $W=20\,\mathrm{kJ}$，
+忽略宏观动能、位能变化。则
+\[
+ \Delta U=mc_v(T_2-T_1)=72\,\mathrm{kJ},\qquad Q=92\,\mathrm{kJ}.
+\]
+检查：$Q-W=72\,\mathrm{kJ}=\Delta U$。定比热容是本例计算内能差的模型条件，
+不是第一定律的成立条件。
+
+\textbf{例2：刚性绝热容器的电功。}
+闭口、刚性、绝热，输入电功 $12\,\mathrm{kJ}$，无其他功，忽略宏观动能、位能变化。
+按对外功为正的约定，$W=-12\,\mathrm{kJ}$、$Q=0$，所以 $\Delta U=12\,\mathrm{kJ}$。
+若只因 $\Delta V=0$ 就令总功为零，会漏掉电功。
+
+\textbf{例3：带散热和速度变化的稳流汽轮机。}
+单进单出、仅有轴功，$\dot m=2\,\mathrm{kg/s}$，$h_1=3300$、$h_2=2500\,\mathrm{kJ/kg}$，
+$c_1=30$、$c_2=90\,\mathrm{m/s}$，向外散热 $20\,\mathrm{kJ/kg}$，忽略位能差。
+先统一能量单位，再用式\eqref{eq:steady}：
+\begin{align*}
+ q&=-20\,\mathrm{kJ/kg},\qquad
+ \Delta e_{\mathrm{k}}=\frac{90^2-30^2}{2\times1000}=3.6\,\mathrm{kJ/kg},\\
+ w_{\mathrm{s}}&=-20-(2500-3300)-3.6=776.4\,\mathrm{kJ/kg},\\
+ \dot W_{\mathrm{s}}&=1552.8\,\mathrm{kW}.
+\end{align*}
+检查：$q-w_{\mathrm{s}}=-796.4=\Delta h+\Delta e_{\mathrm{k}}$，两边单位均为
+$\mathrm{kJ/kg}$；输出功小于可用的焓降，符合散热与动能增加的影响。
+
+\small 本示范全部算例为原创，所用模型与定律有教材依据。来源映射另见
+\texttt{first-law-evidence.json}，不以机器结构校验替代数学核对。
+\end{document}
